@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: 'Satoshi', sans-serif;
+}
+
+.short-border::before,
+  .short-border::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 2rem); /* Adjust the amount as needed */
+    height: 2px; /* Border thickness */
+    background-color: currentColor; /* Use the current text color */
+    left: 1rem; /* Adjust the amount as needed */
+    top: 100%;
+  }
+
+  .short-border:last-child::before,
+  .short-border:last-child::after {
+    display: none; /* Remove the border for the last child */
+  }
